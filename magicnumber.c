@@ -5,18 +5,22 @@ int main()
 {
 	int num,add=0,multi=1;
 	
+	
 	printf("Enter The Number :- ");
 	scanf("%d",&num);	
 	
-	while(num > 0)
+	int temp = num; // temp = 153
+	
+	while(num > 0) // 153 > 0 true
 	{
-		int lst = num % 10; // lst = 151 % 10 = 1 , lst = 15 % 10 = 5, lst = 1 % 10 = 1
-		multi = multi * lst; // multi = 1 * 1 = 1 , multi = 1 * 5 = 5, multi = 5 * 1 = 5 ====> 5
-		add = add + lst; // add = 0 + 1 = 1 , add = 1 + 5 = 6 , add = 6 + 1 = 7          ====> 7   
-		num = num /10; // num = 151 / 10 = 15 , num = 15 / 10 = 1, num = 1 / 10 = 0 
+		multi = 1; 
+		int lst = num % 10; 
+		multi = (multi * lst) * (multi * lst) *(multi * lst) ; 
+		add = add + multi; 
+		num = num /10; 
 	}
 	
-	if(add == multi)
+	if(temp == add)
 	{
 		printf("This Is Magic Number ");
 	}
